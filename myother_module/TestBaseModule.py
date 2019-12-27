@@ -30,6 +30,12 @@ def hua_tu():
 
 
 def my_method(x, y):
+    """
+    测试使用的my_method方法
+    :param x:
+    :param y:
+    :return:
+    """
     if x > y:
         print("x 大于 y")
     elif x < y:
@@ -77,6 +83,12 @@ def add_end(l1=None):
 
 # 可变参数,参数接收到的是一个tuple
 def calc(*num):
+    """
+    nums = [1, 2, 3]
+    cal(*nums)
+    :param num:
+    :return:
+    """
     sum1 = 0
     for n in num:
         sum1 = sum1 + n * n
@@ -228,13 +240,15 @@ def lazy_sum(*args):
     return sum
 
 
-def test7():
+def test7(x):
     x = 200
 
-    def test8():
-        x = 100
+    def test8(x):
         return x
     return test8
+
+
+# print(test7(80)(30))
 
 
 def log1(func):
@@ -286,3 +300,143 @@ def log6(text):
 def now():
     return '2019-04-10 00:00:00'
 
+
+def method(*args, key):
+    print('args = ', args, 'key = ', key)
+
+
+def count1():
+    fs = []
+    for i in range(1, 4):
+        def f():
+            return i*i
+        fs.append(f)
+    return fs
+
+
+def count2():
+    def f(j):
+        return lambda: j*j
+    fs = []
+    for i in range(1, 4):
+        fs.append(f(i))  # f(i)立刻被执行，因此i的当前值被传入f()
+    return fs
+
+
+def fun(a, b):
+    """
+    Python 函数可以返回多个值，多个值以元组的方式返回:
+    :param a:
+    :param b:
+    :return:
+    """
+    return a, b, a+b
+
+
+# print(fun(1, 2))
+# print(locals())
+# x = 1
+#
+#
+# def g():
+#     print(x)
+#     x = 2
+
+
+# a = 10
+
+
+# def method2():
+#     a = a + 1
+#     print(a)
+#
+#
+# method2()
+
+# x = 1
+#
+#
+# def f():
+#     x = 3
+#     g()
+#     print("f:", x)
+#
+#
+# f()  # 报错
+#
+#
+# def g():
+#     print("g:", x)
+
+
+# num = 1
+#
+#
+# def fun1():
+#     global num  # 需要使用 global 关键字声明
+#     print(num)
+#     num = 123
+#     print(num)
+#
+#
+# fun1()
+# print(num)
+
+
+# def outer():
+#     num = 10
+#
+#     def inner():
+#         nonlocal num   # nonlocal关键字声明
+#         num = 100
+#         print(num)
+#     inner()
+#     print(num)
+#
+#
+# outer()
+
+def get_math_func(type):
+    x = '哈哈哈'
+
+    # 定义一个计算平方的局部函数
+    def square(n):  # ①
+        print(x)
+        return n * n
+
+    # 定义一个计算立方的局部函数
+    def cube(n):  # ②
+        print(x)
+        return n * n * n
+
+    # 定义一个计算阶乘的局部函数
+    def factorial(n):   # ③
+        print(x)
+        result = 1
+        for index in range(2, n + 1):
+            result *= index
+        return result
+
+    # 返回局部函数
+    if type == "square":
+        return square
+    if type == "cube":
+        return cube
+    else:
+        return factorial
+
+
+# 调用get_math_func()，程序返回一个嵌套函数
+# math_func = get_math_func("cube")  # 得到cube函数
+# print(math_func(5))  # 输出125
+# math_func = get_math_func("square")  # 得到square函数
+# print(math_func(5))  # 输出25
+# math_func = get_math_func("other")  # 得到factorial函数
+# print(math_func(5))  # 输出120
+
+# print(count1()[0].__closure__)
+# print(math_func.__closure__)
+
+# lambda [parameter_list] : 表达式
+
+help(eval)

@@ -317,9 +317,9 @@
 # it = map(str, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 # print(list(it))
 
-import TestBaseModule
+# import TestBaseModule
 # from functools import reduce
-import functools
+# import functools
 # from collections.abc import Iterator
 # from collections.abc import Iterable
 #
@@ -375,20 +375,122 @@ import functools
 #
 # max2 = functools.partial(max, 10)
 
+# a = 1
+# b = 2
+#
+# # 这种赋值计算，先计算右边，再把结果相应地赋值给左边
+# a, b = b, a + b
+# print(a)
+# print(b)
+#
+# c = 5
+# d = 6
+#
+# c, d = d, c
+# print(c)
+# print(d)
 
-a = 1
-b = 2
+# '''
+# 多行注释1
+# '''
+#
+# """
+# 多行注释2
+# """
 
-# 这种赋值计算，先计算右边，再把结果相应地赋值给左边
-a, b = b, a + b
-print(a)
-print(b)
+# e = 2 ** 3
+# print("e:", e)
+#
+# f = "8"
 
-c = 5
-d = 6
+# print("e对象和f对象一样吗，", e is f)
 
-c, d = d, c
-print(c)
-print(d)
+# string1 = "''嘻嘻哈哈"
+# string2 = "'\"\"'png'"
+#
+#
+# string3 = input("请输入你的内容")
 
+# string1 = 123698
+
+# arr = string1.encode()
+#
+# for str in arr:
+#     print(str)
+# print(string1)
+# print(string2)
+# print(string3)
+
+# print(12 & 8)
+# a = 3
+# b = 5
+# st = "a大于b" if a > b else "a不大于b"
+#
+# print(st)
+# from TestBaseModule import count1, count2, my_method
+# f1, f2, f3 = count1()
+#
+# print("f1 = ", f1, ",f2 = ", f2, ",f3 = ", f3)
+#
+# f1()
+#
+# f2()
+#
+# f3()
+#
+#
+# f5, f6, f7 = count2()
+#
+# print("f5 = ", f5, ",f6 = ", f6, ",f7 = ", f7)
+#
+# f5()
+#
+# f6()
+#
+# f7()
+#
+# print(max(10, 5, 6, 8))
+# print("123"+'abc')
+#
+# print("123"*3)
+#
+# print('A' in 'abc')
+#
+# print(len('888'))
+#
+# for i in reversed([1, 5, 6]):
+#     print(i)
+
+# list1 = [88, 66, 99]
+# tuple1 = (100, 102, 888)
+#
+#
+# dict1 = {'one': 1, 'two': 2, 'three': 3, 'five': [66, 88, 99]}
+#
+# dict2 = dict1.copy()
+#
+# dict1.get('five').remove(66)
+#
+# dict1.pop('one')
+# print('dict1', dict1)
+# print('dict2', dict2)
+#
+# set1 = {1, 2, 3}
+# set2 = {2, 8, 3}
+#
+# print(set1 & set2)
+
+# print(dir(set))
+# print(dir(frozenset))
+# import TestBaseModule
+# help(TestBaseModule.my_method)
+# print(locals())
+# print(globals())
+# a = 1
+# exec("a = 2")  # 相当于直接执行 a=2
+# print(a)
+# result1 = exec("2+3")  # 相当于直接执行 2+3，但是并没有返回值，a 应为 None
+# print(result1)
+# result2 = eval('2+3')  # 执行 2+3，并把结果返回给 a
+# print(result2)
 
