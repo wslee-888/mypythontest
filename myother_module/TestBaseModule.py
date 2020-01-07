@@ -214,6 +214,13 @@ def _not_divisible(n):
     return lambda x: x % n > 0
 
 
+# x = 5
+# test9 = lambda x: x % 2 > 0
+# print(8 % 2)
+# print(5 % 2)
+# print(test9(5))
+
+
 def primes():
     yield 2
     # 初始序列
@@ -244,6 +251,7 @@ def test7(x):
     x = 200
 
     def test8(x):
+        # x = x + 100
         return x
     return test8
 
@@ -335,17 +343,22 @@ def fun(a, b):
 
 # print(fun(1, 2))
 # print(locals())
+
+
 # x = 1
 #
 #
 # def g():
 #     print(x)
 #     x = 2
-
+#
+#
+# g()
 
 # a = 10
-
-
+# a = a + 1
+#
+#
 # def method2():
 #     a = a + 1
 #     print(a)
@@ -406,6 +419,7 @@ def get_math_func(type):
 
     # 定义一个计算立方的局部函数
     def cube(n):  # ②
+        # x = '嘻嘻嘻'
         print(x)
         return n * n * n
 
@@ -439,4 +453,4 @@ def get_math_func(type):
 
 # lambda [parameter_list] : 表达式
 
-help(eval)
+# help(eval)

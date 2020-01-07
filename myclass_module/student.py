@@ -3,6 +3,7 @@
 # __author__ = 'li'
 # ' a test module '
 # __user_name__ = 'liws'
+from typing import Iterable, Any
 
 
 def class_method1():
@@ -31,5 +32,29 @@ class Student(object):
         return 21
 
 
+
+
+
 def class_method2():
     pass
+
+
+class GoodStudent(Student):
+
+    def __init__(self, name, score):
+        super().__init__(name, score)
+
+    def get_name_and_score(self):
+        super().get_name_and_score()
+
+    def __len__(self):
+        return super().__len__()
+
+
+teacher = Teacher(name='李老师', sex='女', age=18)
+teacher.lover = '哈哈哈'
+print(teacher.lover)
+print(teacher)
+print(teacher.name)
+# print(teacher._sex)
+# print(teacher._Teacher__age)
