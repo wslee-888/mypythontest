@@ -47,11 +47,3 @@ class GoodStudent(Student):
     def __len__(self):
         return super().__len__()
 
-
-teacher = Teacher(name='李老师', sex='女', age=18)
-teacher.lover = '哈哈哈'
-print(teacher.lover)
-print(teacher)
-print(teacher.name)
-# print(teacher._sex)
-# print(teacher._Teacher__age)

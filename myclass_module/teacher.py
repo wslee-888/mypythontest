@@ -64,3 +64,12 @@ class Teacher:
 
     def __init_subclass__(cls) -> None:
         super().__init_subclass__()
+
+
+teacher = Teacher(name='李老师', sex='女', age=18)
+teacher.lover = '哈哈哈'
+print(teacher.lover)
+print(teacher)
+print(teacher.name)
+# print(teacher._sex)
+# print(teacher._Teacher__age)
