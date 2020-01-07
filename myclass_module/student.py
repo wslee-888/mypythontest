@@ -32,9 +32,6 @@ class Student(object):
         return 21
 
 
-
-
-
 def class_method2():
     pass
 
