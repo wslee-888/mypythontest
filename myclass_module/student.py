@@ -18,8 +18,8 @@ class Student(object):
     # 给实例绑定属性的方法是通过实例变量，或者通过self变量：
     name = '老王'
 
-    # def __int__(self):
-    #     self.name = '小李'
+    # def __init__(self):
+    #     pass
 
     def __init__(self, name, score):
         self._name = name
@@ -28,8 +28,24 @@ class Student(object):
     def get_name_and_score(self):
         print(self._name, ":", self._score)
 
+    # 同名同参数函数按编译顺序只会后面覆盖
+    def get_name_and_score(self):
+        print(self._name, ":", self._score)
+
     def __len__(self):
         return 21
+
+    @property
+    def score(self):
+        return self._score
+
+    @score.setter
+    def score(self, score):
+        if not isinstance(score, int):
+            raise ValueError('你输入分数不是整数')
+        if score < 0 or score > 100:
+            raise ValueError('你输入的分数超出指定范围')
+        self._score = score
 
 
 def class_method2():
@@ -47,3 +63,9 @@ class GoodStudent(Student):
     def __len__(self):
         return super().__len__()
 
+
+s = Student('笑你妹', 100)
+# s.score = 999999
+s._score = 1000
+print(s.score)
+s.get_name_and_score()

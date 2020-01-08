@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from typing import Iterable
+from typing import Iterable, Any
 
 
 class Teacher:
@@ -13,7 +13,7 @@ class Teacher:
     # sex = ""
     #
     # __age = 0
-    __slots__ = ('love', 'height')
+    # __slots__ = ('love', 'height')
 
     def __init__(self, *, name, sex, age) -> None:
         self.__age = age
