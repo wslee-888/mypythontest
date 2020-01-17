@@ -36,11 +36,11 @@ class Student(object):
         return 21
 
     @property
-    def score(self):
+    def score2(self):
         return self._score
 
-    @score.setter
-    def score(self, score):
+    @score2.setter
+    def score2(self, score):
         if not isinstance(score, int):
             raise ValueError('你输入分数不是整数')
         if score < 0 or score > 100:
@@ -63,9 +63,21 @@ class GoodStudent(Student):
     def __len__(self):
         return super().__len__()
 
+    def __str__(self) -> str:
+        return self._name+":"+str(self._score)
 
-s = Student('笑你妹', 100)
-# s.score = 999999
-s._score = 1000
-print(s.score)
-s.get_name_and_score()
+    # def __repr__(self) -> str:
+    #     return super().__repr__()
+
+    # __repr__ = __str__
+
+
+if __name__ == '__main__':
+    # s = Student('笑你妹', 100)
+    # s.score = 999999
+    # s._score = 1000
+    # print(s.score)
+    # s.get_name_and_score()
+    print(GoodStudent('笑哈哈', 200))
+    gs = GoodStudent('笑哈哈', 200)
+    print(gs)

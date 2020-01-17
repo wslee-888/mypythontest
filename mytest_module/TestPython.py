@@ -493,4 +493,3 @@
 # print(result1)
 # result2 = eval('2+3')  # 执行 2+3，并把结果返回给 a
 # print(result2)
-
